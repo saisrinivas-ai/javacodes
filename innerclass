@@ -1,0 +1,25 @@
+class A {
+	void outerMethod() {
+		class B {
+			void innerMethod() {
+				System.out.println("inside B");
+              class Local{
+                void anonymous(){
+                  System.out.println("inside anonymous");
+                }
+              }
+              Local l=new Local();
+              l.anonymous();
+			}
+          
+		}
+		B y = new B();
+		y.innerMethod();
+	}
+}
+class MethodDemo {
+	public static void main(String[] args) {
+		A x = new A();
+		x.outerMethod();
+	}
+}
